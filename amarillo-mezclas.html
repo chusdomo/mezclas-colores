@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🟡 Amarillo con los demás - Guía de Mezclas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fff3cd 0%, #fffacd 50%, #ffffe0 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            color: #b8860b;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            color: #8b7355;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .color-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 6px solid #ffd700;
+        }
+        
+        .color-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+        
+        .color-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .color-header h2 {
+            font-size: 1.4em;
+            color: #d4a400;
+            margin-left: 10px;
+        }
+        
+        .color-sample {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            border: 3px solid #ddd;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        
+        .formula {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #ffd700;
+        }
+        
+        .formula-line {
+            margin: 5px 0;
+            font-weight: 600;
+        }
+        
+        .result {
+            background: #e8f5e8;
+            padding: 10px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-weight: bold;
+            color: #2d5a2d;
+        }
+        
+        .variations {
+            margin: 15px 0;
+        }
+        
+        .variation {
+            background: #fff8dc;
+            padding: 10px;
+            border-radius: 6px;
+            margin: 8px 0;
+            border-left: 3px solid #daa520;
+        }
+        
+        .uses {
+            background: #f0f8ff;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 3px solid #4682b4;
+        }
+        
+        .tip {
+            background: #fff5ee;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 3px solid #ff7f50;
+            font-style: italic;
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+            margin-right: 8px;
+        }
+        
+        .percentage {
+            background: #ffd700;
+            color: #8b6914;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        
+        /* Colores específicos para las muestras */
+        .verde { background: linear-gradient(45deg, #32cd32, #228b22); }
+        .naranja { background: linear-gradient(45deg, #ff8c00, #ff6347); }
+        .marron { background: linear-gradient(45deg, #8b4513, #a0522d); }
+        .amarillo-verde { background: linear-gradient(45deg, #adff2f, #9acd32); }
+        .amarillo-naranja { background: linear-gradient(45deg, #ffa500, #ff8c00); }
+        .verde-pastel { background: linear-gradient(45deg, #98fb98, #90ee90); }
+        .marron-rojizo { background: linear-gradient(45deg, #cd853f, #d2691e); }
+        .naranja-tostado { background: linear-gradient(45deg, #cd853f, #daa520); }
+        .gris-oliva { background: linear-gradient(45deg, #808000, #6b8e23); }
+        .mostaza { background: linear-gradient(45deg, #ffdb58, #daa520); }
+        .verde-seco { background: linear-gradient(45deg, #bdb76b, #9acd32); }
+        .crema { background: linear-gradient(45deg, #fffacd, #fff8dc); }
+        .ocre { background: linear-gradient(45deg, #cc7722, #b8860b); }
+        .mostaza-gris { background: linear-gradient(45deg, #bdb76b, #a0a0a0); }
+        
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            .header h1 {
+                font-size: 2em;
+            }
+            .color-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🟡 AMARILLO con otros colores</h1>
+            <p>Guía completa de mezclas y combinaciones cromáticas</p>
+        </div>
+        
+        <div class="grid">
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample verde"></div>
+                    <h2>🔸 Amarillo + Azul = Verde</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🟡 Amarillo = <span class="percentage">100%</span></div>
+                    <div class="formula-line">🔵 Azul = <span class="percentage">100%</span></div>
+                    <div class="result">➡ Verde puro = <span class="percentage">50% + 50%</span></div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Amarillo (70/30):</strong> verde amarillento<br>Perfecto para césped soleado, primavera</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Azul (30/70):</strong> verde frío<br>Ideal para hojas en sombra, algas, camuflaje</div>
+                </div>
+                <div class="uses"><span class="emoji">🌿</span><strong>Usos:</strong> Vegetación, moho, camuflaje, naturaleza</div>
+                <div class="tip"><span class="emoji">🎯</span><strong>Consejo:</strong> Añadir blanco = verde menta. Gris = verde oliva</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample naranja"></div>
+                    <h2>🔸 Amarillo + Rojo = Naranja</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🟡 Amarillo = <span class="percentage">100%</span></div>
+                    <div class="formula-line">🔴 Rojo = <span class="percentage">100%</span></div>
+                    <div class="result">➡ Naranja saturado y cálido</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Amarillo (70/30):</strong> naranja claro<br>Usos: luces cálidas, zonas soleadas</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Rojo (30/70):</strong> naranja oscuro<br>Ideal para óxido, fuego, cueros</div>
+                </div>
+                <div class="uses"><span class="emoji">🔥</span><strong>Usos:</strong> Luces, fuego, objetos cálidos, ladrillos</div>
+                <div class="tip"><span class="emoji">⚠</span><strong>Consejo:</strong> Muy potente: suavizar con blanco o gris según uso</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample marron"></div>
+                    <h2>🔸 Amarillo + Violeta = Marrón sucio</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🟡 Amarillo = <span class="percentage">100%</span></div>
+                    <div class="formula-line">🟣 Violeta = Rojo <span class="percentage">50%</span> + Azul <span class="percentage">50%</span></div>
+                    <div class="result">➡ Marrón apagado, tierra neutra</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Amarillo (70/30):</strong> marrón cálido<br>Ideal para suelos secos, maderas claras</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Violeta (30/70):</strong> marrón oscuro violáceo<br>Usos: sombras de tierra, madera envejecida</div>
+                </div>
+                <div class="uses"><span class="emoji">🌰</span><strong>Usos:</strong> Tierra, madera, fondo vegetal oscuro</div>
+                <div class="tip"><span class="emoji">✅</span><strong>Consejo:</strong> Añadir blanco = beige sucio. Muy útil para bases</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample amarillo-verde"></div>
+                    <h2>🔸 Amarillo + Verde = Amarillo-verde</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🟡 Amarillo = <span class="percentage">100%</span></div>
+                    <div class="formula-line">💚 Verde = Amarillo <span class="percentage">60%</span> + Azul <span class="percentage">40%</span></div>
+                    <div class="result">➡ Amarillo-verde, brillante y fresco</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Amarillo (70/30):</strong> verde limón<br>Perfecto para musgo fresco, primavera</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Verde (30/70):</strong> verde más oscuro<br>Usos: follaje, base de vegetación</div>
+                </div>
+                <div class="uses"><span class="emoji">🌱</span><strong>Usos:</strong> Césped, hojas tiernas, líquenes, algas</div>
+                <div class="tip"><span class="emoji">⚠</span><strong>Consejo:</strong> Es un color muy vivo: usar con control en zonas puntuales</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample amarillo-naranja"></div>
+                    <h2>🔸 Amarillo + Naranja = Amarillo-naranja</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🟡 Amarillo = <span class="percentage">100%</span></div>
+                    <div class="formula-line">🟧 Naranja = Rojo <span class="percentage">50%</span> + Amarillo <span class="percentage">50%</span></div>
+                    <div class="result">➡ Amarillo-naranja brillante</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Amarillo (70/30):</strong> amarillo dorado<br>Usos: focos, resplandores, piel cálida</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Naranja (30/70):</strong> naranja suave<br>Perfecto para piel, zonas con luz cálida</div>
+                </div>
+                <div class="uses"><span class="emoji">☀️</span><strong>Usos:</strong> Piel, telas, luz cálida, pintura de fuego</div>
+                <div class="tip"><span class="emoji">✅</span><strong>Consejo:</strong> Muy útil para tonos de carne si se suaviza con blanco</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample verde-pastel"></div>
+                    <h2>🔸 Amarillo + Azul-verde = Verde pastel</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🟡 Amarillo = <span class="percentage">100%</span></div>
+                    <div class="formula-line">🌊 Azul-verde = Azul <span class="percentage">60%</span> + Verde <span class="percentage">40%</span></div>
+                    <div class="result">➡ Verde claro, grisáceo, fresco</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Amarillo (70/30):</strong> verde limón pálido<br>Usos: vegetación joven, reflejos cálidos</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Azul-verde (30/70):</strong> verde grisáceo<br>Ideal para roca húmeda, musgo, óxido vegetal</div>
+                </div>
+                <div class="uses"><span class="emoji">🪨</span><strong>Usos:</strong> Vegetación seca, piedra, agua estancada</div>
+                <div class="tip"><span class="emoji">🎨</span><strong>Consejo:</strong> Muy útil como sombra cálida o luz vegetal desaturada</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample marron-rojizo"></div>
+                    <h2>🔸 Amarillo + Rojo-violeta = Marrón rojizo</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🟡 Amarillo = <span class="percentage">100%</span></div>
+                    <div class="formula-line">🍷 Rojo-violeta = Rojo <span class="percentage">60%</span> + Azul <span class="percentage">40%</span></div>
+                    <div class="result">➡ Marrón rojizo cálido</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Amarillo (70/30):</strong> marrón claro tostado<br>Perfecto para tierra seca, bases de suelos</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Rojo-violeta (30/70):</strong> marrón vino<br>Ideal para madera barnizada, sombras calientes</div>
+                </div>
+                <div class="uses"><span class="emoji">🌾</span><strong>Usos:</strong> Tierra, madera, cuero viejo, telas nobles</div>
+                <div class="tip"><span class="emoji">🎯</span><strong>Consejo:</strong> Añadir blanco → beige vino. Buen tono de transición</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample naranja-tostado"></div>
+                    <h2>🔸 Amarillo + Rojo-naranja = Naranja tostado</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🟡 Amarillo = <span class="percentage">100%</span></div>
+                    <div class="formula-line">🟥 Rojo-naranja = Rojo <span class="percentage">60%</span> + Amarillo <span class="percentage">40%</span></div>
+                    <div class="result">➡ Naranja cálido, como siena claro</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Amarillo (70/30):</strong> naranja ocre claro<br>Perfecto para zonas iluminadas, polvo, ropas viejas</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Rojo-naranja (30/70):</strong> naranja tostado<br>Usos: óxido, piedra cálida, piel curtida</div>
+                </div>
+                <div class="uses"><span class="emoji">🟫</span><strong>Usos:</strong> Ropas, bases de terreno seco, óxido moderado</div>
+                <div class="tip"><span class="emoji">✅</span><strong>Consejo:</strong> Muy versátil. Añadir gris o negro genera tonos tierra realistas</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample gris-oliva"></div>
+                    <h2>🔸 Amarillo + Azul-violeta = Gris oliva</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🟡 Amarillo = <span class="percentage">100%</span></div>
+                    <div class="formula-line">🔵🟣 Azul-violeta = Azul <span class="percentage">60%</span> + Rojo <span class="percentage">40%</span></div>
+                    <div class="result">➡ Gris con matiz verdoso, oliva apagado</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Amarillo (70/30):</strong> gris oliva claro<br>Ideal para rocas, bases de vegetación, camuflaje seco</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Azul-violeta (30/70):</strong> gris más frío<br>Perfecto para profundidad, sombras con tono verde</div>
+                </div>
+                <div class="uses"><span class="emoji">🎖</span><strong>Usos:</strong> Camuflaje, metales oxidados, desgaste vegetal</div>
+                <div class="tip"><span class="emoji">🎨</span><strong>Consejo:</strong> Añadir blanco = verde grisáceo muy realista</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample mostaza"></div>
+                    <h2>🔸 Amarillo + Amarillo-naranja = Mostaza</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🟡 Amarillo = <span class="percentage">100%</span></div>
+                    <div class="formula-line">🍊 Amarillo-naranja = Amarillo <span class="percentage">60%</span> + Rojo <span class="percentage">40%</span></div>
+                    <div class="result">➡ Mostaza cálido, rústico</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Amarillo (70/30):</strong> mostaza claro<br>Usos: polvo, piedra caliza, telas viejas</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Amarillo-naranja (30/70):</strong> ocre cálido<br>Ideal para ladrillos, óxido seco</div>
+                </div>
+                <div class="uses"><span class="emoji">🧱</span><strong>Usos:</strong> Madera vieja, óxido suave, texturas en roca o tierra</div>
+                <div class="tip"><span class="emoji">🎯</span><strong>Consejo:</strong> Muy útil en paisajes rurales o desérticos</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample verde-seco"></div>
+                    <h2>🔸 Amarillo + Amarillo-verde = Verde seco</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🟡 Amarillo = <span class="percentage">100%</span></div>
+                    <div class="formula-line">💚 Amarillo-verde = Amarillo <span class="percentage">70%</span> + Azul <span class="percentage">30%</span></div>
+                    <div class="result">➡ Verde apagado, como liquen seco</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Amarillo (70/30):</strong> verde amarillento claro<br>Perfecto para musgo seco, heno</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Amarillo-verde (30/70):</strong> verde seco<br>Ideal para follaje sombreado, vegetación muerta</div>
+                </div>
+                <div class="uses"><span class="emoji">🌿</span><strong>Usos:</strong> Vegetación muerta, musgo, suelo</div>
+                <div class="tip"><span class="emoji">✅</span><strong>Consejo:</strong> Muy útil para dar realismo sin saturar la escena</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample crema"></div>
+                    <h2>🔸 Amarillo + Blanco = Crema</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🟡 Amarillo = <span class="percentage">100%</span></div>
+                    <div class="formula-line">⚪ Blanco = <span class="percentage">100%</span></div>
+                    <div class="result">➡ Crema, tono pastel cálido</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Amarillo (70/30):</strong> crema intenso<br>Ideal para efectos de sol, resplandores</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Blanco (30/70):</strong> crema pálido<br>Perfecto para telas, paredes, luz ambiente</div>
+                </div>
+                <div class="uses"><span class="emoji">🍦</span><strong>Usos:</strong> Luz cálida, piel clara, telas, comida</div>
+                <div class="tip"><span class="emoji">✅</span><strong>Consejo:</strong> Ideal como base clara para técnicas de iluminación</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample ocre"></div>
+                    <h2>🔸 Amarillo + Negro = Ocre</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🟡 Amarillo = <span class="percentage">100%</span></div>
+                    <div class="formula-line">⚫ Negro = <span class="percentage">100%</span></div>
+                    <div class="result">➡ Ocre oscuro, marrón verdoso</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Amarillo (70/30):</strong> ocre cálido<br>Perfecto para tierra seca, rocas</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Negro (30/70):</strong> ocre frío<br>Usos: bases para sombra, metal envejecido</div>
+                </div>
+                <div class="uses"><span class="emoji">🏺</span><strong>Usos:</strong> Piedra, barro seco, óxido viejo</div>
+                <div class="tip"><span class="emoji">⚠</span><strong>Consejo:</strong> Se vuelve opaco rápidamente. Agrega blanco si oscurece demasiado</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample mostaza-gris"></div>
+                    <h2>🔸 Amarillo + Gris = Mostaza grisáceo</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🟡 Amarillo = <span class="percentage">100%</span></div>
+                    <div class="formula-line">⚪ Gris = Negro + Blanco</div>
+                    <div class="result">➡ Mostaza apagado, terroso</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Amarillo (70/30):</strong> mostaza cálido<br>Ideal para muros, desierto, polvo</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Gris (30/70):</strong> mostaza grisáceo<br>Usos: rocas, óxido muy viejo, ropa gastada</div>
+                </div>
+                <div class="uses"><span class="emoji">🏜</span><strong>Usos:</strong> Texturas terrosas, ropa, edificios envejecidos</div>
+                <div class="tip"><span class="emoji">🎨</span><strong>Consejo:</strong> Base ideal para técnicas de pincel seco</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
