@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔴 Rojo con los demás - Guía de Mezclas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ffe8e8 0%, #fff0f0 50%, #ffe0e0 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(45deg, #dc143c, #ff6347);
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(220, 20, 60, 0.3);
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            color: #8b0000;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            color: #5d2b2b;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .color-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 6px solid #dc143c;
+        }
+        
+        .color-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+        
+        .color-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .color-header h2 {
+            font-size: 1.4em;
+            color: #c41e3a;
+            margin-left: 10px;
+        }
+        
+        .color-sample {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            border: 3px solid #ddd;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        
+        .formula {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #dc143c;
+        }
+        
+        .formula-line {
+            margin: 5px 0;
+            font-weight: 600;
+        }
+        
+        .result {
+            background: #e8f5e8;
+            padding: 10px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-weight: bold;
+            color: #2d5a2d;
+        }
+        
+        .variations {
+            margin: 15px 0;
+        }
+        
+        .variation {
+            background: #fff8dc;
+            padding: 10px;
+            border-radius: 6px;
+            margin: 8px 0;
+            border-left: 3px solid #daa520;
+        }
+        
+        .uses {
+            background: #f0f8ff;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 3px solid #4682b4;
+        }
+        
+        .tip {
+            background: #fff5ee;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 3px solid #ff7f50;
+            font-style: italic;
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+            margin-right: 8px;
+        }
+        
+        .percentage {
+            background: #dc143c;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        
+        /* Colores específicos para las muestras */
+        .violeta { background: linear-gradient(45deg, #8a2be2, #9932cc); }
+        .naranja { background: linear-gradient(45deg, #ff8c00, #ff6347); }
+        .marron { background: linear-gradient(45deg, #8b4513, #a0522d); }
+        .rojo-naranja { background: linear-gradient(45deg, #ff4500, #dc143c); }
+        .rojo-violeta { background: linear-gradient(45deg, #dc143c, #8b008b); }
+        .gris-violaceo { background: linear-gradient(45deg, #696969, #8b7d8b); }
+        .marron-calido { background: linear-gradient(45deg, #cd853f, #8b4513); }
+        .naranja-intenso { background: linear-gradient(45deg, #ff6347, #ff4500); }
+        .rojo-quemado { background: linear-gradient(45deg, #8b0000, #cd5c5c); }
+        .purpura-oscuro { background: linear-gradient(45deg, #4b0082, #8b008b); }
+        .burdeos { background: linear-gradient(45deg, #800020, #b22222); }
+        .rosa { background: linear-gradient(45deg, #ff69b4, #ffb6c1); }
+        .rojo-profundo { background: linear-gradient(45deg, #8b0000, #2f0000); }
+        .rojo-apagado { background: linear-gradient(45deg, #cd5c5c, #a0522d); }
+        
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            .header h1 {
+                font-size: 2em;
+            }
+            .color-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔴 ROJO con otros colores</h1>
+            <p>Guía completa de mezclas y combinaciones cromáticas</p>
+        </div>
+        
+        <div class="grid">
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample violeta"></div>
+                    <h2>🔸 Rojo + Azul = Violeta</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🔴 Rojo = <span class="percentage">100%</span></div>
+                    <div class="formula-line">🔵 Azul = <span class="percentage">100%</span></div>
+                    <div class="result">➡ Violeta = <span class="percentage">50% + 50%</span></div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Rojo (70/30):</strong> violeta cálido, más cercano al magenta<br>🟣 Ideal para flores brillantes, telas mágicas, detalles llamativos</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Azul (30/70):</strong> violeta profundo, más frío<br>🔵 Ideal para sombras, capas de profundidad, criaturas nocturnas</div>
+                </div>
+                <div class="uses"><span class="emoji">🌌</span><strong>Usos:</strong> Magia, efectos mágicos, telas de fantasía, zonas sombrías</div>
+                <div class="tip"><span class="emoji">⚠</span><strong>Consejo:</strong> Mezclar bien para evitar vetas. Añadir blanco crea tonos lavanda útiles</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample naranja"></div>
+                    <h2>🔸 Rojo + Amarillo = Naranja</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🔴 Rojo = <span class="percentage">100%</span></div>
+                    <div class="formula-line">🟡 Amarillo = <span class="percentage">100%</span></div>
+                    <div class="result">➡ Naranja = 50% Rojo + 50% Amarillo</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Rojo (70/30):</strong> rojo-naranja intenso<br>🟥 Ideal para ladrillos, óxido reciente, zonas calcinadas</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Amarillo (30/70):</strong> naranja dorado<br>🟨 Ideal para luces cálidas, atardeceres, campos secos</div>
+                </div>
+                <div class="uses"><span class="emoji">🔥</span><strong>Usos:</strong> Llamas, ropas cálidas, faroles, óxido</div>
+                <div class="tip"><span class="emoji">✅</span><strong>Consejo:</strong> Añadir blanco da melocotón. Añadir gris = naranja tostado</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample marron"></div>
+                    <h2>🔸 Rojo + Verde = Marrón</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🔴 Rojo = <span class="percentage">100%</span></div>
+                    <div class="formula-line">💚 Verde = Amarillo <span class="percentage">60%</span> + Azul <span class="percentage">40%</span></div>
+                    <div class="result">➡ Marrón terroso = 50% Rojo + 50% Verde</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Rojo (70/30):</strong> marrón cálido rojizo<br>Ideal para arcillas, maderas rojizas, óxido seco</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Verde (30/70):</strong> marrón oliva<br>Perfecto para vegetación seca, suelos húmedos</div>
+                </div>
+                <div class="uses"><span class="emoji">🌳</span><strong>Usos:</strong> Tierra, moho, bases de vegetación, madera natural</div>
+                <div class="tip"><span class="emoji">👀</span><strong>Consejo:</strong> El rojo neutraliza el verde y da calidez. Combinar con blanco = beige tierra</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample rojo-naranja"></div>
+                    <h2>🔸 Rojo + Naranja = Rojo-naranja</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🔴 Rojo = <span class="percentage">100%</span></div>
+                    <div class="formula-line">🟧 Naranja = Rojo <span class="percentage">50%</span> + Amarillo <span class="percentage">50%</span></div>
+                    <div class="result">➡ Rojo-naranja cálido = 50% Rojo + 50% Naranja</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Rojo (70/30):</strong> rojo encendido, vibrante<br>Ideal para faroles, fuego intenso, detalles mágicos</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Naranja (30/70):</strong> naranja rojizo<br>Usos: telas cálidas, calabazas, detalles de estructuras</div>
+                </div>
+                <div class="uses"><span class="emoji">🔥</span><strong>Usos:</strong> Magia, fuego, tela ceremonial, decoraciones festivas</div>
+                <div class="tip"><span class="emoji">🎨</span><strong>Consejo:</strong> Muy saturado, combinar con gris o azul para enfriar y equilibrar</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample rojo-violeta"></div>
+                    <h2>🔸 Rojo + Violeta = Rojo-violeta</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🔴 Rojo = <span class="percentage">100%</span></div>
+                    <div class="formula-line">🟣 Violeta = Rojo <span class="percentage">50%</span> + Azul <span class="percentage">50%</span></div>
+                    <div class="result">➡ Rojo-violeta = 50% Rojo + 50% Violeta</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Rojo (70/30):</strong> tono vino claro, cálido<br>🍷 Ideal para telas de nobleza, estandartes</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Violeta (30/70):</strong> púrpura más oscuro<br>🎭 Ideal para sombras de piel, oscuridad con tono cálido</div>
+                </div>
+                <div class="uses"><span class="emoji">🎨</span><strong>Usos:</strong> Ropas reales, sombras cálidas, luces crepusculares</div>
+                <div class="tip"><span class="emoji">✅</span><strong>Consejo:</strong> Agregar blanco crea tonos rosados místicos</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample gris-violaceo"></div>
+                    <h2>🔸 Rojo + Azul-verde = Grisáceo oscuro</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🔴 Rojo = <span class="percentage">100%</span></div>
+                    <div class="formula-line">🌊 Azul-verde = Azul <span class="percentage">60%</span> + Verde <span class="percentage">40%</span></div>
+                    <div class="result">➡ Gris oscuro con matiz violáceo</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Rojo (70/30):</strong> gris cálido violáceo<br>Ideal para sombras cálidas, paredes desgastadas</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Azul-verde (30/70):</strong> gris frío con matiz verdoso<br>Perfecto para rocas, estructuras húmedas</div>
+                </div>
+                <div class="uses"><span class="emoji">🏚</span><strong>Usos:</strong> Sombras, metales oxidados, madera antigua</div>
+                <div class="tip"><span class="emoji">⚠</span><strong>Consejo:</strong> Muy útil para neutralizar zonas demasiado saturadas</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample marron-calido"></div>
+                    <h2>🔸 Rojo + Amarillo-verde = Marrón cálido</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🔴 Rojo = <span class="percentage">100%</span></div>
+                    <div class="formula-line">💚 Amarillo-verde = Amarillo <span class="percentage">70%</span> + Azul <span class="percentage">30%</span></div>
+                    <div class="result">➡ Marrón con matiz oliva cálido</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Rojo (70/30):</strong> marrón anaranjado, seco<br>Ideal para desiertos, cuero seco</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Amarillo-verde (30/70):</strong> marrón oliva<br>Perfecto para follaje seco, corteza</div>
+                </div>
+                <div class="uses"><span class="emoji">🌾</span><strong>Usos:</strong> Vegetación seca, barro claro, tierras soleadas</div>
+                <div class="tip"><span class="emoji">✅</span><strong>Consejo:</strong> Añadir blanco → beige natural. Buen sustituto del siena tostado</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample naranja-intenso"></div>
+                    <h2>🔸 Rojo + Amarillo-naranja = Naranja intenso</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🔴 Rojo = <span class="percentage">100%</span></div>
+                    <div class="formula-line">🍊 Amarillo-naranja = Amarillo <span class="percentage">60%</span> + Rojo <span class="percentage">40%</span></div>
+                    <div class="result">➡ Naranja encendido, muy saturado</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Rojo (70/30):</strong> rojo-anaranjado brillante<br>Ideal para efectos de fuego, faroles</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Amarillo-naranja (30/70):</strong> naranja cálido<br>Perfecto para piel de personajes, tonos cálidos</div>
+                </div>
+                <div class="uses"><span class="emoji">🔥</span><strong>Usos:</strong> Llamas, efectos mágicos, criaturas ígneas</div>
+                <div class="tip"><span class="emoji">⚠</span><strong>Consejo:</strong> Muy potente. Suavizar con blanco o gris si distrae</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample rojo-quemado"></div>
+                    <h2>🔸 Rojo + Rojo-naranja = Rojo quemado</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🔴 Rojo = <span class="percentage">100%</span></div>
+                    <div class="formula-line">🟥 Rojo-naranja = Rojo <span class="percentage">60%</span> + Amarillo <span class="percentage">40%</span></div>
+                    <div class="result">➡ Rojo oscuro con matiz cálido, como teja</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Rojo (70/30):</strong> rojo vino con un toque anaranjado<br>Ideal para óxido viejo, cuero desgastado</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Rojo-naranja (30/70):</strong> rojo ladrillo<br>Perfecto para casas rurales, muros antiguos</div>
+                </div>
+                <div class="uses"><span class="emoji">🏚</span><strong>Usos:</strong> Tejados, muros, óxido seco, detalles envejecidos</div>
+                <div class="tip"><span class="emoji">🎨</span><strong>Consejo:</strong> Agregar gris lo convierte en rojo inglés, muy versátil</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample purpura-oscuro"></div>
+                    <h2>🔸 Rojo + Azul-violeta = Púrpura oscuro</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🔴 Rojo = <span class="percentage">100%</span></div>
+                    <div class="formula-line">🔵🟣 Azul-violeta = Azul <span class="percentage">60%</span> + Rojo <span class="percentage">40%</span></div>
+                    <div class="result">➡ Púrpura denso, muy profundo</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Rojo (70/30):</strong> borgoña con base azulada<br>Ideal para detalles lujosos, vino, telas caras</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Azul-violeta (30/70):</strong> púrpura frío y oscuro<br>Perfecto para sombras profundas, capuchas mágicas</div>
+                </div>
+                <div class="uses"><span class="emoji">🍷</span><strong>Usos:</strong> Tela mágica, vino, oscuridad rica, profundidad visual</div>
+                <div class="tip"><span class="emoji">✅</span><strong>Consejo:</strong> Añadir blanco da tonos malva muy interesantes</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample burdeos"></div>
+                    <h2>🔸 Rojo + Rojo-violeta = Burdeos</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🔴 Rojo = <span class="percentage">100%</span></div>
+                    <div class="formula-line">🍷 Rojo-violeta = Rojo <span class="percentage">60%</span> + Azul <span class="percentage">40%</span></div>
+                    <div class="result">➡ Burdeos elegante y oscuro</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Rojo (70/30):</strong> burdeos cálido<br>Perfecto para capas, trajes ceremoniales</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Rojo-violeta (30/70):</strong> más púrpura, más sobrio<br>Usos: detalles mágicos, sombras realistas</div>
+                </div>
+                <div class="uses"><span class="emoji">🎩</span><strong>Usos:</strong> Ropas de nobleza, pieles oscuras, madera barnizada</div>
+                <div class="tip"><span class="emoji">👑</span><strong>Consejo:</strong> Mezcla estable, ideal para bases rojizas y profundidad</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample rosa"></div>
+                    <h2>🔸 Rojo + Blanco = Rosa</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🔴 Rojo = <span class="percentage">100%</span></div>
+                    <div class="formula-line">⚪ Blanco = <span class="percentage">100%</span></div>
+                    <div class="result">➡ Rosa claro, pastel o saturado según cantidad</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Rojo (70/30):</strong> rosa saturado<br>Perfecto para flores, detalles mágicos, carnes vivas</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Blanco (30/70):</strong> rosa pálido<br>Ideal para piel clara, nubes, ropas delicadas</div>
+                </div>
+                <div class="uses"><span class="emoji">🌸</span><strong>Usos:</strong> Flores, telas, rubor, zonas de luz</div>
+                <div class="tip"><span class="emoji">✅</span><strong>Consejo:</strong> Añadir azul = lila. Con negro → rosa sucio muy útil</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample rojo-profundo"></div>
+                    <h2>🔸 Rojo + Negro = Rojo profundo</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🔴 Rojo = <span class="percentage">100%</span></div>
+                    <div class="formula-line">⚫ Negro = <span class="percentage">100%</span></div>
+                    <div class="result">➡ Rojo oscuro, tipo sangre seca</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Rojo (70/30):</strong> rojo sangre<br>Perfecto para heridas, sangre fresca, telas densas</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Negro (30/70):</strong> rojo casi marrón<br>Ideal para sombras cálidas, óxido profundo</div>
+                </div>
+                <div class="uses"><span class="emoji">🩸</span><strong>Usos:</strong> Sangre, heridas, capas, armaduras oscuras</div>
+                <div class="tip"><span class="emoji">⚠</span><strong>Consejo:</strong> Añadir azul = púrpura profundo. Controlar para no ennegrecer</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample rojo-apagado"></div>
+                    <h2>🔸 Rojo + Gris = Rojo apagado</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🔴 Rojo = <span class="percentage">100%</span></div>
+                    <div class="formula-line">⚪ Gris = Negro + Blanco</div>
+                    <div class="result">➡ Rojo mate, de baja saturación</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Rojo (70/30):</strong> rojo algo desaturado<br>Perfecto para ladrillos, telas viejas</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Gris (30/70):</strong> rojo casi marrón grisáceo<br>Ideal para tierra húmeda, uniformes, desgaste</div>
+                </div>
+                <div class="uses"><span class="emoji">🏗</span><strong>Usos:</strong> Muros, suelo, desgaste de estructuras, vestimenta realista</div>
+                <div class="tip"><span class="emoji">🎯</span><strong>Consejo:</strong> Muy útil para neutralizar zonas demasiado brillantes</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

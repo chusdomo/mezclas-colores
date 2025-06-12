@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💚 Verde con los demás - Guía de Mezclas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e8f5e8 0%, #f0fff0 50%, #e0ffe0 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(45deg, #32cd32, #228b22);
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(50, 205, 50, 0.3);
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            color: #003d00;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            color: #004d00;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .color-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 6px solid #32cd32;
+        }
+        
+        .color-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+        
+        .color-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .color-header h2 {
+            font-size: 1.4em;
+            color: #228b22;
+            margin-left: 10px;
+        }
+        
+        .color-sample {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            border: 3px solid #ddd;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        
+        .formula {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #32cd32;
+        }
+        
+        .formula-line {
+            margin: 5px 0;
+            font-weight: 600;
+        }
+        
+        .result {
+            background: #e8f5e8;
+            padding: 10px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-weight: bold;
+            color: #2d5a2d;
+        }
+        
+        .variations {
+            margin: 15px 0;
+        }
+        
+        .variation {
+            background: #f0fff0;
+            padding: 10px;
+            border-radius: 6px;
+            margin: 8px 0;
+            border-left: 3px solid #228b22;
+        }
+        
+        .uses {
+            background: #f0f8ff;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 3px solid #4682b4;
+        }
+        
+        .tip {
+            background: #fff5ee;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 3px solid #ff7f50;
+            font-style: italic;
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+            margin-right: 8px;
+        }
+        
+        .percentage {
+            background: #32cd32;
+            color: #003d00;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        
+        /* Colores específicos para las muestras */
+        .marron { background: linear-gradient(45deg, #8b4513, #a0522d); }
+        .azul-verde { background: linear-gradient(45deg, #006666, #4682b4); }
+        .amarillo-verde { background: linear-gradient(45deg, #adff2f, #9acd32); }
+        .tierra-oscura { background: linear-gradient(45deg, #654321, #8b4513); }
+        .gris-verdoso { background: linear-gradient(45deg, #708090, #556b2f); }
+        .verde-sombra { background: linear-gradient(45deg, #2e8b57, #013220); }
+        .oliva-sucio { background: linear-gradient(45deg, #556b2f, #6b8e23); }
+        .verde-seco { background: linear-gradient(45deg, #bdb76b, #9acd32); }
+        .marron-violaceo { background: linear-gradient(45deg, #5d4e37, #483d8b); }
+        .verde-profundo { background: linear-gradient(45deg, #013220, #006400); }
+        .verde-limon { background: linear-gradient(45deg, #9aff9a, #7fff00); }
+        .verde-menta { background: linear-gradient(45deg, #98fb98, #90ee90); }
+        .verde-bosque { background: linear-gradient(45deg, #228b22, #013220); }
+        .verde-camuflaje { background: linear-gradient(45deg, #556b2f, #808080); }
+        
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            .header h1 {
+                font-size: 2em;
+            }
+            .color-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💚 VERDE con otros colores</h1>
+            <p>Guía completa de mezclas y combinaciones cromáticas</p>
+        </div>
+        
+        <div class="grid">
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample marron"></div>
+                    <h2>🔸 Verde + Rojo = Marrón</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">💚 Verde = Amarillo <span class="percentage">60%</span> + Azul <span class="percentage">40%</span></div>
+                    <div class="formula-line">🔴 Rojo = <span class="percentage">100%</span> Rojo</div>
+                    <div class="result">➡ Marrón neutro con tono terroso</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Verde (70/30):</strong> marrón oliva<br>Ideal para bases vegetales, árboles</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Rojo (30/70):</strong> marrón rojizo<br>Perfecto para óxido, arcilla seca</div>
+                </div>
+                <div class="uses"><span class="emoji">🌳</span><strong>Usos:</strong> Vegetación seca, madera, bases de terreno realista</div>
+                <div class="tip"><span class="emoji">✅</span><strong>Consejo:</strong> Añadir blanco da tonos arcilla. Negro → tierra húmeda</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample azul-verde"></div>
+                    <h2>🔸 Verde + Azul = Azul-verde</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">💚 Verde = Amarillo <span class="percentage">60%</span> + Azul <span class="percentage">40%</span></div>
+                    <div class="formula-line">🔵 Azul = <span class="percentage">100%</span> Azul</div>
+                    <div class="result">➡ Azul-verde frío, profundo</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Verde (70/30):</strong> verde azulado<br>Usos: musgo oscuro, hojas mojadas</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Azul (30/70):</strong> azul petróleo<br>Ideal para agua estancada, sombras frías</div>
+                </div>
+                <div class="uses"><span class="emoji">🌊</span><strong>Usos:</strong> Zonas húmedas, agua, sombra vegetal, líquenes</div>
+                <div class="tip"><span class="emoji">🎯</span><strong>Consejo:</strong> Agregar blanco da verde marino claro. Muy útil para ambientes húmedos</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample amarillo-verde"></div>
+                    <h2>🔸 Verde + Amarillo = Amarillo-verde</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">💚 Verde = Amarillo <span class="percentage">60%</span> + Azul <span class="percentage">40%</span></div>
+                    <div class="formula-line">🟡 Amarillo = <span class="percentage">100%</span> Amarillo</div>
+                    <div class="result">➡ Verde vivo, brillante</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Verde (70/30):</strong> verde soleado<br>Perfecto para césped vivo, primavera</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Amarillo (30/70):</strong> verde limón<br>Ideal para musgo fresco, brotes</div>
+                </div>
+                <div class="uses"><span class="emoji">🌱</span><strong>Usos:</strong> Vegetación viva, campos, follaje joven</div>
+                <div class="tip"><span class="emoji">✅</span><strong>Consejo:</strong> Añadir blanco → verde pastel. Mezcla muy útil para luces en vegetación</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample tierra-oscura"></div>
+                    <h2>🔸 Verde + Naranja = Tierra oscura</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">💚 Verde = Amarillo <span class="percentage">60%</span> + Azul <span class="percentage">40%</span></div>
+                    <div class="formula-line">🟧 Naranja = Rojo <span class="percentage">50%</span> + Amarillo <span class="percentage">50%</span></div>
+                    <div class="result">➡ Marrón oscuro con matiz oliva</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Verde (70/30):</strong> marrón terroso verdoso<br>Perfecto para bases vegetales secas</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Naranja (30/70):</strong> marrón cálido<br>Ideal para madera envejecida, tierra húmeda</div>
+                </div>
+                <div class="uses"><span class="emoji">🌲</span><strong>Usos:</strong> Suelos de bosque, bases de dioramas naturales, madera sucia</div>
+                <div class="tip"><span class="emoji">🎯</span><strong>Consejo:</strong> Útil para hacer transiciones entre zonas verdes y marrones</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample gris-verdoso"></div>
+                    <h2>🔸 Verde + Violeta = Gris verdoso</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">💚 Verde = Amarillo <span class="percentage">60%</span> + Azul <span class="percentage">40%</span></div>
+                    <div class="formula-line">🟣 Violeta = Rojo <span class="percentage">50%</span> + Azul <span class="percentage">50%</span></div>
+                    <div class="result">➡ Gris apagado con matiz frío</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Verde (70/30):</strong> gris verdoso<br>Ideal para sombra de vegetación, camuflaje</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Violeta (30/70):</strong> gris violeta apagado<br>Perfecto para sombras de roca, ambientes oscuros</div>
+                </div>
+                <div class="uses"><span class="emoji">🌫</span><strong>Usos:</strong> Camuflaje, niebla vegetal, bases neutras</div>
+                <div class="tip"><span class="emoji">✅</span><strong>Consejo:</strong> Muy útil para zonas sombrías. Agregar blanco → gris militar claro</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample verde-sombra"></div>
+                    <h2>🔸 Verde + Azul-violeta = Verde sombra</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">💚 Verde = Amarillo <span class="percentage">60%</span> + Azul <span class="percentage">40%</span></div>
+                    <div class="formula-line">🔵🟣 Azul-violeta = Azul <span class="percentage">60%</span> + Rojo <span class="percentage">40%</span></div>
+                    <div class="result">➡ Verde oscuro, profundo y sombrío</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Verde (70/30):</strong> verde bosque<br>Perfecto para bases de árboles, musgo oscuro</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Azul-violeta (30/70):</strong> casi negro con matiz vegetal<br>Usos: cuevas, rocas con musgo, bases húmedas</div>
+                </div>
+                <div class="uses"><span class="emoji">🌳</span><strong>Usos:</strong> Vegetación densa, fondo de bosque, piedra húmeda</div>
+                <div class="tip"><span class="emoji">✅</span><strong>Consejo:</strong> Mezcla perfecta para lavados o filtros sombríos</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample oliva-sucio"></div>
+                    <h2>🔸 Verde + Rojo-naranja = Oliva sucio</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">💚 Verde = Amarillo <span class="percentage">60%</span> + Azul <span class="percentage">40%</span></div>
+                    <div class="formula-line">🟥 Rojo-naranja = Rojo <span class="percentage">60%</span> + Amarillo <span class="percentage">40%</span></div>
+                    <div class="result">➡ Marrón verdoso con matiz cálido</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Verde (70/30):</strong> verde oliva<br>Ideal para vehículos militares, vegetación envejecida</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Rojo-naranja (30/70):</strong> marrón sucio cálido<br>Usos: tierra húmeda, madera podrida</div>
+                </div>
+                <div class="uses"><span class="emoji">🪖</span><strong>Usos:</strong> Camuflaje, sombras de vegetación, madera deteriorada</div>
+                <div class="tip"><span class="emoji">🎯</span><strong>Consejo:</strong> Muy útil para tonos naturales de transición y sombras cálidas</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample verde-seco"></div>
+                    <h2>🔸 Verde + Amarillo-naranja = Verde seco</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">💚 Verde = Amarillo <span class="percentage">60%</span> + Azul <span class="percentage">40%</span></div>
+                    <div class="formula-line">🍊 Amarillo-naranja = Amarillo <span class="percentage">60%</span> + Rojo <span class="percentage">40%</span></div>
+                    <div class="result">➡ Verde cálido y desaturado</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Verde (70/30):</strong> verde sucio claro<br>Perfecto para ramas, liquen seco</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Amarillo-naranja (30/70):</strong> verde mostaza<br>Ideal para zonas desérticas, techos de paja</div>
+                </div>
+                <div class="uses"><span class="emoji">🌾</span><strong>Usos:</strong> Hierba seca, campo, texturas naturales apagadas</div>
+                <div class="tip"><span class="emoji">✅</span><strong>Consejo:</strong> Agregar blanco → verde caqui claro. Muy útil para ambientaciones veraniegas o secas</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample marron-violaceo"></div>
+                    <h2>🔸 Verde + Rojo-violeta = Marrón violáceo</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">💚 Verde = Amarillo <span class="percentage">60%</span> + Azul <span class="percentage">40%</span></div>
+                    <div class="formula-line">🍷 Rojo-violeta = Rojo <span class="percentage">60%</span> + Azul <span class="percentage">40%</span></div>
+                    <div class="result">➡ Marrón oscuro con matiz frío</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Verde (70/30):</strong> marrón apagado verdoso<br>Perfecto para sombra de raíces, moho viejo</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Rojo-violeta (30/70):</strong> marrón vino sucio<br>Ideal para barro húmedo, madera vieja</div>
+                </div>
+                <div class="uses"><span class="emoji">🌰</span><strong>Usos:</strong> Tierra húmeda, zonas sombrías, cortezas oscuras</div>
+                <div class="tip"><span class="emoji">🎯</span><strong>Consejo:</strong> Añadir blanco da tono piel sucia, excelente para miniaturas fantásticas</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample verde-profundo"></div>
+                    <h2>🔸 Verde + Azul-verde = Verde profundo</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">💚 Verde = Amarillo <span class="percentage">60%</span> + Azul <span class="percentage">40%</span></div>
+                    <div class="formula-line">🌊 Azul-verde = Azul <span class="percentage">60%</span> + Verde <span class="percentage">40%</span></div>
+                    <div class="result">➡ Verde muy oscuro, húmedo</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Verde (70/30):</strong> verde selva<br>Perfecto para bases tropicales, árboles sombríos</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Azul-verde (30/70):</strong> verde-petróleo vegetal<br>Ideal para sombras frías, cuevas húmedas</div>
+                </div>
+                <div class="uses"><span class="emoji">🌿</span><strong>Usos:</strong> Vegetación húmeda, raíces, vegetación en sombra total</div>
+                <div class="tip"><span class="emoji">✅</span><strong>Consejo:</strong> Muy útil para bases en ambientes lluviosos o selváticos</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample verde-limon"></div>
+                    <h2>🔸 Verde + Amarillo-verde = Verde limón</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">💚 Verde = Amarillo <span class="percentage">60%</span> + Azul <span class="percentage">40%</span></div>
+                    <div class="formula-line">💚 Amarillo-verde = Amarillo <span class="percentage">70%</span> + Azul <span class="percentage">30%</span></div>
+                    <div class="result">➡ Verde muy brillante, fresco</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Verde (70/30):</strong> verde fresco<br>Perfecto para reflejos de luz en hojas</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Amarillo-verde (30/70):</strong> verde neón<br>Usos: musgo vivo, líquenes soleados</div>
+                </div>
+                <div class="uses"><span class="emoji">🍋</span><strong>Usos:</strong> Vegetación iluminada, líquenes brillantes, efectos mágicos vegetales</div>
+                <div class="tip"><span class="emoji">⚠</span><strong>Consejo:</strong> Usar en pequeñas zonas: es muy llamativo. Añadir blanco da verde neón pastel</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample verde-menta"></div>
+                    <h2>🔸 Verde + Blanco = Verde menta</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">💚 Verde = Amarillo <span class="percentage">60%</span> + Azul <span class="percentage">40%</span></div>
+                    <div class="formula-line">⚪ Blanco = <span class="percentage">100%</span> Blanco</div>
+                    <div class="result">➡ Verde claro, fresco y limpio</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Verde (70/30):</strong> verde menta saturado<br>Perfecto para plantas alienígenas, criaturas mágicas</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Blanco (30/70):</strong> verde muy pálido<br>Ideal para nubes verdes, efectos sobrenaturales</div>
+                </div>
+                <div class="uses"><span class="emoji">🍃</span><strong>Usos:</strong> Hojas brillantes, musgo encantado, niebla vegetal</div>
+                <div class="tip"><span class="emoji">✅</span><strong>Consejo:</strong> Añadir azul → turquesa suave. Con amarillo → verde pastel limón</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample verde-bosque"></div>
+                    <h2>🔸 Verde + Negro = Verde bosque</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">💚 Verde = Amarillo <span class="percentage">60%</span> + Azul <span class="percentage">40%</span></div>
+                    <div class="formula-line">⚫ Negro = <span class="percentage">100%</span> Negro</div>
+                    <div class="result">➡ Verde muy oscuro, sombrío</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Verde (70/30):</strong> verde selva oscuro<br>Perfecto para fondo de vegetación, jungla</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Negro (30/70):</strong> casi negro con matiz verde<br>Usos: cavernas, profundidad extrema</div>
+                </div>
+                <div class="uses"><span class="emoji">🌲</span><strong>Usos:</strong> Sombras de árboles, selvas, cuevas húmedas</div>
+                <div class="tip"><span class="emoji">🎯</span><strong>Consejo:</strong> Base perfecta para trabajar con luces. Añadir blanco → verde bosque desgastado</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample verde-camuflaje"></div>
+                    <h2>🔸 Verde + Gris = Verde camuflaje</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">💚 Verde = Amarillo <span class="percentage">60%</span> + Azul <span class="percentage">40%</span></div>
+                    <div class="formula-line">⚪ Gris = Blanco + Negro</div>
+                    <div class="result">➡ Verde desaturado, militar</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Verde (70/30):</strong> verde oliva grisáceo<br>Perfecto para uniformes, vehículos militares</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Gris (30/70):</strong> gris verdoso<br>Ideal para edificios, muros, sombras vegetales</div>
+                </div>
+                <div class="uses"><span class="emoji">🪖</span><strong>Usos:</strong> Camuflaje, maquinaria, ropas, estructuras</div>
+                <div class="tip"><span class="emoji">✅</span><strong>Consejo:</strong> Base esencial en escenografía militar. Muy versátil en lavados</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🟧 Naranja con los demás - Guía de Mezclas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ffe4b5 0%, #ffdab9 50%, #ffcdb2 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(45deg, #ff8c00, #ff6347);
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(255, 140, 0, 0.3);
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            color: #8b4513;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            color: #d2691e;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .color-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 6px solid #ff8c00;
+        }
+        
+        .color-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+        
+        .color-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .color-header h2 {
+            font-size: 1.4em;
+            color: #d2691e;
+            margin-left: 10px;
+        }
+        
+        .color-sample {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            border: 3px solid #ddd;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        
+        .formula {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #ff8c00;
+        }
+        
+        .formula-line {
+            margin: 5px 0;
+            font-weight: 600;
+        }
+        
+        .result {
+            background: #e8f5e8;
+            padding: 10px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-weight: bold;
+            color: #2d5a2d;
+        }
+        
+        .variations {
+            margin: 15px 0;
+        }
+        
+        .variation {
+            background: #fff8dc;
+            padding: 10px;
+            border-radius: 6px;
+            margin: 8px 0;
+            border-left: 3px solid #daa520;
+        }
+        
+        .uses {
+            background: #f0f8ff;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 3px solid #4682b4;
+        }
+        
+        .tip {
+            background: #fff5ee;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 3px solid #ff7f50;
+            font-style: italic;
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+            margin-right: 8px;
+        }
+        
+        .percentage {
+            background: #ff8c00;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        
+        /* Colores específicos para las muestras */
+        .gris-neutro { background: linear-gradient(45deg, #808080, #a9a9a9); }
+        .amarillo-naranja { background: linear-gradient(45deg, #ffa500, #ff8c00); }
+        .rojo-naranja { background: linear-gradient(45deg, #ff6347, #ff4500); }
+        .marron-verdoso { background: linear-gradient(45deg, #8b4513, #9acd32); }
+        .marron-purpura { background: linear-gradient(45deg, #8b4513, #800080); }
+        .marron-neutral { background: linear-gradient(45deg, #a0522d, #708090); }
+        .oxido { background: linear-gradient(45deg, #cd853f, #a0522d); }
+        .tierra { background: linear-gradient(45deg, #daa520, #8b4513); }
+        .marron-grisaceo { background: linear-gradient(45deg, #696969, #8b4513); }
+        .naranja-tostado { background: linear-gradient(45deg, #cd853f, #ff8c00); }
+        .calabaza { background: linear-gradient(45deg, #ff8c00, #ffa500); }
+        .melocoton { background: linear-gradient(45deg, #ffcba4, #ffdab9); }
+        .marron-oxido { background: linear-gradient(45deg, #8b4513, #2f2f2f); }
+        .naranja-apagado { background: linear-gradient(45deg, #cd853f, #a9a9a9); }
+        
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            .header h1 {
+                font-size: 2em;
+            }
+            .color-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🟧 NARANJA con otros colores</h1>
+            <p>Guía completa de mezclas y combinaciones cromáticas</p>
+        </div>
+        
+        <div class="grid">
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample gris-neutro"></div>
+                    <h2>🔸 Naranja + Azul = Gris</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🟧 Naranja = Rojo <span class="percentage">50%</span> + Amarillo <span class="percentage">50%</span></div>
+                    <div class="formula-line">🔵 Azul = <span class="percentage">100%</span> Azul</div>
+                    <div class="result">➡ Gris neutro con ligera calidez</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Naranja (70/30):</strong> gris cálido<br>Perfecto para tierra seca, muros soleados</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Azul (30/70):</strong> gris frío<br>Ideal para estructuras de piedra, sombras suaves</div>
+                </div>
+                <div class="uses"><span class="emoji">🏚</span><strong>Usos:</strong> Rocas, hormigón, bases neutras, desgaste urbano</div>
+                <div class="tip"><span class="emoji">🎨</span><strong>Consejo:</strong> Muy útil para restar saturación sin pasarse al marrón o negro</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample amarillo-naranja"></div>
+                    <h2>🔸 Naranja + Amarillo = Amarillo-naranja</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🟧 Naranja = Rojo <span class="percentage">50%</span> + Amarillo <span class="percentage">50%</span></div>
+                    <div class="formula-line">🟡 Amarillo = <span class="percentage">100%</span> Amarillo</div>
+                    <div class="result">➡ Tono cálido y brillante, intermedio entre ambos</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Naranja (70/30):</strong> tono calabaza<br>Perfecto para vegetación seca, resplandores mágicos</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Amarillo (30/70):</strong> amarillo dorado<br>Usos: reflejos de sol, atardeceres, piel cálida</div>
+                </div>
+                <div class="uses"><span class="emoji">🌞</span><strong>Usos:</strong> Luz solar, elementos brillantes, resplandores mágicos</div>
+                <div class="tip"><span class="emoji">✅</span><strong>Consejo:</strong> Añadir blanco → dorado pastel. Mezcla perfecta para zonas iluminadas</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample rojo-naranja"></div>
+                    <h2>🔸 Naranja + Rojo = Rojo-naranja</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🟧 Naranja = Rojo <span class="percentage">50%</span> + Amarillo <span class="percentage">50%</span></div>
+                    <div class="formula-line">🔴 Rojo = <span class="percentage">100%</span> Rojo</div>
+                    <div class="result">➡ Rojo intenso con base cálida</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Naranja (70/30):</strong> rojo anaranjado<br>Perfecto para fuego, brasas, óxido joven</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Rojo (30/70):</strong> rojo encendido<br>Ideal para telas llamativas, magia ígnea</div>
+                </div>
+                <div class="uses"><span class="emoji">🔥</span><strong>Usos:</strong> Fuego, telas, óxido reciente, decoraciones mágicas</div>
+                <div class="tip"><span class="emoji">⚠</span><strong>Consejo:</strong> Mezcla muy saturada, ideal para detalles, no para grandes superficies</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample marron-verdoso"></div>
+                    <h2>🔸 Naranja + Verde = Marrón verdoso</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🟧 Naranja = Rojo <span class="percentage">50%</span> + Amarillo <span class="percentage">50%</span></div>
+                    <div class="formula-line">💚 Verde = Amarillo <span class="percentage">60%</span> + Azul <span class="percentage">40%</span></div>
+                    <div class="result">➡ Marrón con matices oliva</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Naranja (70/30):</strong> marrón cálido<br>Perfecto para tierra seca, troncos envejecidos</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Verde (30/70):</strong> marrón verdoso apagado<br>Ideal para sombra vegetal, cortezas húmedas</div>
+                </div>
+                <div class="uses"><span class="emoji">🌲</span><strong>Usos:</strong> Bases de árboles, barro, vegetación muerta</div>
+                <div class="tip"><span class="emoji">🎯</span><strong>Consejo:</strong> Muy útil para zonas de transición entre tierra y vegetación</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample marron-purpura"></div>
+                    <h2>🔸 Naranja + Violeta = Marrón púrpura</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🟧 Naranja = Rojo <span class="percentage">50%</span> + Amarillo <span class="percentage">50%</span></div>
+                    <div class="formula-line">🟣 Violeta = Rojo <span class="percentage">50%</span> + Azul <span class="percentage">50%</span></div>
+                    <div class="result">➡ Marrón oscuro con matiz vino o arcilla húmeda</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Naranja (70/30):</strong> marrón rojizo<br>Perfecto para óxido, sombras cálidas</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Violeta (30/70):</strong> marrón violáceo<br>Ideal para efectos mágicos oscuros, madera barnizada</div>
+                </div>
+                <div class="uses"><span class="emoji">🪵</span><strong>Usos:</strong> Óxido, madera, piel curtida, capas de sombra</div>
+                <div class="tip"><span class="emoji">✅</span><strong>Consejo:</strong> Añadir blanco da gris cálido. Muy útil para ambientes sobrenaturales</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample marron-neutral"></div>
+                    <h2>🔸 Naranja + Azul-verde = Marrón neutral</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🟧 Naranja = Rojo <span class="percentage">50%</span> + Amarillo <span class="percentage">50%</span></div>
+                    <div class="formula-line">🌊 Azul-verde = Azul <span class="percentage">60%</span> + Verde <span class="percentage">40%</span></div>
+                    <div class="result">➡ Marrón desaturado, frío-neutro</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Naranja (70/30):</strong> marrón cálido neutro<br>Perfecto para bases de terreno seco</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Azul-verde (30/70):</strong> marrón verdoso<br>Ideal para musgo, sombra, óxido oscuro</div>
+                </div>
+                <div class="uses"><span class="emoji">🏞</span><strong>Usos:</strong> Tierra, rocas húmedas, suelos sombreados</div>
+                <div class="tip"><span class="emoji">🎨</span><strong>Consejo:</strong> Buen color base para texturas con lavados posteriores</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample oxido"></div>
+                    <h2>🔸 Naranja + Rojo-violeta = Óxido</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🟧 Naranja = Rojo <span class="percentage">50%</span> + Amarillo <span class="percentage">50%</span></div>
+                    <div class="formula-line">🍷 Rojo-violeta = Rojo <span class="percentage">60%</span> + Azul <span class="percentage">40%</span></div>
+                    <div class="result">➡ Rojo óxido con matiz vinoso</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Naranja (70/30):</strong> óxido anaranjado<br>Perfecto para metales corroídos, hierro</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Rojo-violeta (30/70):</strong> óxido púrpura<br>Ideal para envejecido mágico, sangre seca</div>
+                </div>
+                <div class="uses"><span class="emoji">🧱</span><strong>Usos:</strong> Óxido, heridas, sangre antigua, metales mágicos</div>
+                <div class="tip"><span class="emoji">🎯</span><strong>Consejo:</strong> Añadir gris lo apaga, blanco lo convierte en coral oscuro</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample tierra"></div>
+                    <h2>🔸 Naranja + Amarillo-verde = Tierra</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🟧 Naranja = Rojo <span class="percentage">50%</span> + Amarillo <span class="percentage">50%</span></div>
+                    <div class="formula-line">💚 Amarillo-verde = Amarillo <span class="percentage">70%</span> + Azul <span class="percentage">30%</span></div>
+                    <div class="result">➡ Marrón claro, cálido y seco</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Naranja (70/30):</strong> tierra naranja<br>Perfecto para desiertos, caminos polvorientos</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Amarillo-verde (30/70):</strong> tierra verdosa<br>Ideal para campos, vegetación seca</div>
+                </div>
+                <div class="uses"><span class="emoji">🏜</span><strong>Usos:</strong> Terreno seco, caminos, zonas áridas o rurales</div>
+                <div class="tip"><span class="emoji">✅</span><strong>Consejo:</strong> Muy útil como base para pincel seco con colores ocres</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample marron-grisaceo"></div>
+                    <h2>🔸 Naranja + Azul-violeta = Marrón grisáceo</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🟧 Naranja = Rojo <span class="percentage">50%</span> + Amarillo <span class="percentage">50%</span></div>
+                    <div class="formula-line">🔵🟣 Azul-violeta = Azul <span class="percentage">60%</span> + Rojo <span class="percentage">40%</span></div>
+                    <div class="result">➡ Marrón muy neutro con matiz gris-violáceo</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Naranja (70/30):</strong> marrón cálido sucio<br>Perfecto para muros envejecidos</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Azul-violeta (30/70):</strong> marrón oscuro neutro<br>Ideal para zonas sombrías, madera antigua</div>
+                </div>
+                <div class="uses"><span class="emoji">🏚</span><strong>Usos:</strong> Bases de casas, estructuras de piedra, madera gastada</div>
+                <div class="tip"><span class="emoji">⚠</span><strong>Consejo:</strong> Agregar blanco = gris topo muy útil para edificios</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample naranja-tostado"></div>
+                    <h2>🔸 Naranja + Rojo-naranja = Naranja tostado</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🟧 Naranja = Rojo <span class="percentage">50%</span> + Amarillo <span class="percentage">50%</span></div>
+                    <div class="formula-line">🟥 Rojo-naranja = Rojo <span class="percentage">60%</span> + Amarillo <span class="percentage">40%</span></div>
+                    <div class="result">➡ Naranja oscuro con tono rojizo</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Naranja (70/30):</strong> naranja tostado claro<br>Perfecto para ladrillos, piel curtida</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Rojo-naranja (30/70):</strong> rojo óxido<br>Usos: metales, carne cocida, tierra arcillosa</div>
+                </div>
+                <div class="uses"><span class="emoji">🧱</span><strong>Usos:</strong> Ladrillos, cuero, óxido seco, decorado fantástico</div>
+                <div class="tip"><span class="emoji">✅</span><strong>Consejo:</strong> Añadir gris → siena tostado. Blanco → melocotón profundo</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample calabaza"></div>
+                    <h2>🔸 Naranja + Amarillo-naranja = Calabaza</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🟧 Naranja = Rojo <span class="percentage">50%</span> + Amarillo <span class="percentage">50%</span></div>
+                    <div class="formula-line">🍊 Amarillo-naranja = Amarillo <span class="percentage">60%</span> + Rojo <span class="percentage">40%</span></div>
+                    <div class="result">➡ Naranja claro cálido, tipo calabaza</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Naranja (70/30):</strong> naranja fuerte<br>Perfecto para calabazas, vegetación seca cálida</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Amarillo-naranja (30/70):</strong> naranja pastel<br>Ideal para ropa, decoración otoñal, madera clara</div>
+                </div>
+                <div class="uses"><span class="emoji">🎃</span><strong>Usos:</strong> Calabazas, hojas secas, madera suave</div>
+                <div class="tip"><span class="emoji">🎯</span><strong>Consejo:</strong> Muy útil para ambientaciones otoñales o mágicas suaves</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample melocoton"></div>
+                    <h2>🔸 Naranja + Blanco = Melocotón</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🟧 Naranja = Rojo <span class="percentage">50%</span> + Amarillo <span class="percentage">50%</span></div>
+                    <div class="formula-line">⚪ Blanco = <span class="percentage">100%</span> Blanco</div>
+                    <div class="result">➡ Tono suave, cálido y claro</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Naranja (70/30):</strong> melocotón intenso<br>Perfecto para piel iluminada, luz mágica cálida</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Blanco (30/70):</strong> crema-anaranjada<br>Ideal para nubes, reflejos de luz</div>
+                </div>
+                <div class="uses"><span class="emoji">🌤</span><strong>Usos:</strong> Piel, atardeceres, telas mágicas suaves</div>
+                <div class="tip"><span class="emoji">✅</span><strong>Consejo:</strong> Añadir gota de gris lo convierte en color maquillaje perfecto</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample marron-oxido"></div>
+                    <h2>🔸 Naranja + Negro = Marrón óxido</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🟧 Naranja = Rojo <span class="percentage">50%</span> + Amarillo <span class="percentage">50%</span></div>
+                    <div class="formula-line">⚫ Negro = <span class="percentage">100%</span> Negro</div>
+                    <div class="result">➡ Marrón profundo, casi rojizo</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Naranja (70/30):</strong> marrón óxido anaranjado<br>Perfecto para metales oxidados, ladrillos sucios</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Negro (30/70):</strong> marrón negruzco<br>Ideal para sombra de óxido, cuero oscuro</div>
+                </div>
+                <div class="uses"><span class="emoji">🧱</span><strong>Usos:</strong> Metales, zonas industriales, elementos dañados</div>
+                <div class="tip"><span class="emoji">⚠</span><strong>Consejo:</strong> Con blanco se vuelve color arcilla industrial. Muy útil en lavados</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample naranja-apagado"></div>
+                    <h2>🔸 Naranja + Gris = Naranja apagado</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🟧 Naranja = Rojo <span class="percentage">50%</span> + Amarillo <span class="percentage">50%</span></div>
+                    <div class="formula-line">⚪ Gris = Negro + Blanco</div>
+                    <div class="result">➡ Tono terroso, desaturado</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Naranja (70/30):</strong> naranja tostado suave<br>Ideal para base de edificios, zonas envejecidas</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Gris (30/70):</strong> naranja grisáceo<br>Perfecto para suelo, muros, ropa vieja</div>
+                </div>
+                <div class="uses"><span class="emoji">🏚</span><strong>Usos:</strong> Terreno, tela, decoración interior, dioramas urbanos</div>
+                <div class="tip">

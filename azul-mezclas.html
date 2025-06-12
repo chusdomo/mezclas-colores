@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔵 Azul con los demás - Guía de Mezclas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e6f3ff 0%, #b3d9ff 50%, #87ceeb 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(45deg, #4169e1, #6495ed);
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(65, 105, 225, 0.3);
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            color: #1e3a8a;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            color: #2563eb;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .color-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 6px solid #4169e1;
+        }
+        
+        .color-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+        
+        .color-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .color-header h2 {
+            font-size: 1.4em;
+            color: #2563eb;
+            margin-left: 10px;
+        }
+        
+        .color-sample {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            border: 3px solid #ddd;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        
+        .formula {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #4169e1;
+        }
+        
+        .formula-line {
+            margin: 5px 0;
+            font-weight: 600;
+        }
+        
+        .result {
+            background: #e8f5e8;
+            padding: 10px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-weight: bold;
+            color: #2d5a2d;
+        }
+        
+        .variations {
+            margin: 15px 0;
+        }
+        
+        .variation {
+            background: #f0f8ff;
+            padding: 10px;
+            border-radius: 6px;
+            margin: 8px 0;
+            border-left: 3px solid #4169e1;
+        }
+        
+        .uses {
+            background: #fff5ee;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 3px solid #ff7f50;
+        }
+        
+        .tip {
+            background: #f0fff0;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 3px solid #32cd32;
+            font-style: italic;
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+            margin-right: 8px;
+        }
+        
+        .percentage {
+            background: #4169e1;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        
+        /* Colores específicos para las muestras */
+        .violeta { background: linear-gradient(45deg, #8a2be2, #9370db); }
+        .verde { background: linear-gradient(45deg, #32cd32, #228b22); }
+        .azul-verde { background: linear-gradient(45deg, #20b2aa, #48d1cc); }
+        .gris { background: linear-gradient(45deg, #808080, #a9a9a9); }
+        .azul-violeta { background: linear-gradient(45deg, #4b0082, #6a5acd); }
+        .azul-purpura { background: linear-gradient(45deg, #191970, #483d8b); }
+        .verde-frio { background: linear-gradient(45deg, #2e8b57, #3cb371); }
+        .marron-frio { background: linear-gradient(45deg, #696969, #8b4513); }
+        .verde-marino { background: linear-gradient(45deg, #006400, #2f4f4f); }
+        .azul-profundo { background: linear-gradient(45deg, #000080, #191970); }
+        .gris-azulado { background: linear-gradient(45deg, #708090, #778899); }
+        .celeste { background: linear-gradient(45deg, #87ceeb, #87cefa); }
+        .azul-noche { background: linear-gradient(45deg, #000080, #0f0f23); }
+        .azul-grisaceo { background: linear-gradient(45deg, #4682b4, #5f9ea0); }
+        
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            .header h1 {
+                font-size: 2em;
+            }
+            .color-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔵 AZUL con otros colores</h1>
+            <p>Guía completa de mezclas y combinaciones cromáticas</p>
+        </div>
+        
+        <div class="grid">
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample violeta"></div>
+                    <h2>🔸 Azul + Rojo = Violeta</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🔵 Azul = <span class="percentage">100%</span></div>
+                    <div class="formula-line">🔴 Rojo = <span class="percentage">100%</span></div>
+                    <div class="result">➡ Violeta = mezcla equilibrada, tono frío y vibrante</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Azul (70/30):</strong> violeta frío<br>Ideal para sombras mágicas, ropa nocturna</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Rojo (30/70):</strong> púrpura cálido<br>Perfecto para capas reales, vino oscuro</div>
+                </div>
+                <div class="uses"><span class="emoji">🧙‍♂️</span><strong>Usos:</strong> Magia, vestuario, profundidad misteriosa</div>
+                <div class="tip"><span class="emoji">✅</span><strong>Consejo:</strong> Añadir blanco da lavanda, añadir negro crea púrpura denso</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample verde"></div>
+                    <h2>🔸 Azul + Amarillo = Verde</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🔵 Azul = <span class="percentage">100%</span></div>
+                    <div class="formula-line">🟡 Amarillo = <span class="percentage">100%</span></div>
+                    <div class="result">➡ Verde saturado y natural</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Azul (70/30):</strong> verde oscuro<br>Perfecto para vegetación en sombra, algas</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Amarillo (30/70):</strong> verde limón<br>Ideal para hojas nuevas, musgo joven</div>
+                </div>
+                <div class="uses"><span class="emoji">🌿</span><strong>Usos:</strong> Vegetación, algas, camuflaje, sombras de árboles</div>
+                <div class="tip"><span class="emoji">🎯</span><strong>Consejo:</strong> Esencial en dioramas naturales. Añadir blanco da verde menta</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample azul-verde"></div>
+                    <h2>🔸 Azul + Verde = Azul-verde</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🔵 Azul = <span class="percentage">100%</span></div>
+                    <div class="formula-line">💚 Verde = Amarillo <span class="percentage">60%</span> + Azul <span class="percentage">40%</span></div>
+                    <div class="result">➡ Azul-verde frío y profundo</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Azul (70/30):</strong> azul marino<br>Ideal para agua profunda, noche</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Verde (30/70):</strong> azul verdoso<br>Perfecto para estanques, musgo húmedo</div>
+                </div>
+                <div class="uses"><span class="emoji">🌊</span><strong>Usos:</strong> Agua, sombra vegetal, humedad, pintura marina</div>
+                <div class="tip"><span class="emoji">✅</span><strong>Consejo:</strong> Muy versátil para zonas de humedad o profundidad visual</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample gris"></div>
+                    <h2>🔸 Azul + Naranja = Gris</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🔵 Azul = <span class="percentage">100%</span></div>
+                    <div class="formula-line">🟧 Naranja = Amarillo <span class="percentage">50%</span> + Rojo <span class="percentage">50%</span></div>
+                    <div class="result">➡ Gris neutro, ligeramente cálido o frío</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Azul (70/30):</strong> gris azulado<br>Ideal para sombras frías, estructuras metálicas</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Naranja (30/70):</strong> gris cálido<br>Perfecto para muros, polvo, luz suave</div>
+                </div>
+                <div class="uses"><span class="emoji">🏚</span><strong>Usos:</strong> Sombras, paredes, ropa, metales viejos</div>
+                <div class="tip"><span class="emoji">🎯</span><strong>Consejo:</strong> Muy útil para desaturar sin ensuciar demasiado la mezcla</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample azul-violeta"></div>
+                    <h2>🔸 Azul + Violeta = Azul-violeta</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🔵 Azul = <span class="percentage">100%</span></div>
+                    <div class="formula-line">🟣 Violeta = Rojo <span class="percentage">50%</span> + Azul <span class="percentage">50%</span></div>
+                    <div class="result">➡ Azul-violeta, frío y sofisticado</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Azul (70/30):</strong> azul profundo, casi negro<br>Usos: cielo nocturno, sombras extremas</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Violeta (30/70):</strong> azul púrpura<br>Ideal para hechizos, magia visual</div>
+                </div>
+                <div class="uses"><span class="emoji">🌌</span><strong>Usos:</strong> Magia, oscuridad, energía mágica, texturas sobrenaturales</div>
+                <div class="tip"><span class="emoji">✅</span><strong>Consejo:</strong> Añadir blanco → tonos noche brillante. Muy expresivo</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample azul-purpura"></div>
+                    <h2>🔸 Azul + Rojo-violeta = Azul púrpura</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🔵 Azul = <span class="percentage">100%</span></div>
+                    <div class="formula-line">🍷 Rojo-violeta = Rojo <span class="percentage">60%</span> + Azul <span class="percentage">40%</span></div>
+                    <div class="result">➡ Azul con matiz púrpura, elegante</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Azul (70/30):</strong> azul noche intenso<br>Ideal para cielos, océanos nocturnos</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Rojo-violeta (30/70):</strong> púrpura azulado<br>Perfecto para capas, hechizos, criaturas místicas</div>
+                </div>
+                <div class="uses"><span class="emoji">🧵</span><strong>Usos:</strong> Telas mágicas, sombras mágicas, detalles decorativos</div>
+                <div class="tip"><span class="emoji">🎨</span><strong>Consejo:</strong> Muy útil como sombra cálida disfrazada de fría</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample verde-frio"></div>
+                    <h2>🔸 Azul + Amarillo-verde = Verde frío</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🔵 Azul = <span class="percentage">100%</span></div>
+                    <div class="formula-line">💚 Amarillo-verde = Amarillo <span class="percentage">70%</span> + Azul <span class="percentage">30%</span></div>
+                    <div class="result">➡ Verde frío, muy vegetal</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Azul (70/30):</strong> verde azulado<br>Ideal para zonas húmedas, plantas oscuras</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Amarillo-verde (30/70):</strong> verde vibrante<br>Perfecto para vegetación nueva o soleada</div>
+                </div>
+                <div class="uses"><span class="emoji">🌿</span><strong>Usos:</strong> Vegetación intermedia, sombras en follaje, bases para musgo</div>
+                <div class="tip"><span class="emoji">✅</span><strong>Consejo:</strong> Se puede calentar añadiendo rojo o desaturar con gris</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample marron-frio"></div>
+                    <h2>🔸 Azul + Rojo-naranja = Marrón frío</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🔵 Azul = <span class="percentage">100%</span></div>
+                    <div class="formula-line">🟥 Rojo-naranja = Rojo <span class="percentage">60%</span> + Amarillo <span class="percentage">40%</span></div>
+                    <div class="result">➡ Marrón azulado, grisáceo</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Azul (70/30):</strong> marrón frío oscuro<br>Ideal para sombras de cuero, ropa sucia</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Rojo-naranja (30/70):</strong> marrón cálido grisáceo<br>Perfecto para tierra, madera envejecida</div>
+                </div>
+                <div class="uses"><span class="emoji">🪵</span><strong>Usos:</strong> Tierra, óxido, madera, sombra de piel</div>
+                <div class="tip"><span class="emoji">🎯</span><strong>Consejo:</strong> Muy útil para neutralizar tonos piel sin volverlos grises</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample verde-marino"></div>
+                    <h2>🔸 Azul + Azul-verde = Verde marino</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🔵 Azul = <span class="percentage">100%</span></div>
+                    <div class="formula-line">🌊 Azul-verde = Azul <span class="percentage">60%</span> + Verde <span class="percentage">40%</span></div>
+                    <div class="result">➡ Verde azulado oscuro, oceánico</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Azul (70/30):</strong> azul petróleo<br>Perfecto para profundidad marina, pozos, cuevas</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Azul-verde (30/70):</strong> verde turquesa apagado<br>Ideal para lagos, zonas encharcadas, musgo oscuro</div>
+                </div>
+                <div class="uses"><span class="emoji">🌊</span><strong>Usos:</strong> Agua estancada, pinturas húmedas, ambientación marina</div>
+                <div class="tip"><span class="emoji">✅</span><strong>Consejo:</strong> Muy expresivo con blanco o negro. Da reflejos acuáticos</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample azul-profundo"></div>
+                    <h2>🔸 Azul + Azul-violeta = Azul profundo</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🔵 Azul = <span class="percentage">100%</span></div>
+                    <div class="formula-line">🔵🟣 Azul-violeta = Azul <span class="percentage">60%</span> + Rojo <span class="percentage">40%</span></div>
+                    <div class="result">➡ Azul muy oscuro, denso</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Azul (70/30):</strong> casi negro azulado<br>Usos: noche, túneles, ropa profunda</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Azul-violeta (30/70):</strong> azul tinta<br>Ideal para hechicería, detalles místicos</div>
+                </div>
+                <div class="uses"><span class="emoji">🌌</span><strong>Usos:</strong> Magia, oscuridad, telas profundas, capas de hechiceros</div>
+                <div class="tip"><span class="emoji">🎯</span><strong>Consejo:</strong> Añadir blanco da tonos "fantasmas" azulados</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample gris-azulado"></div>
+                    <h2>🔸 Azul + Amarillo-naranja = Gris azulado</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🔵 Azul = <span class="percentage">100%</span></div>
+                    <div class="formula-line">🍊 Amarillo-naranja = Amarillo <span class="percentage">60%</span> + Rojo <span class="percentage">40%</span></div>
+                    <div class="result">➡ Gris con matiz azul, frío</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Azul (70/30):</strong> gris azulado claro<br>Ideal para estructuras metálicas, muros húmedos</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Amarillo-naranja (30/70):</strong> gris cálido neutro<br>Perfecto para zonas secas, bases cálidas apagadas</div>
+                </div>
+                <div class="uses"><span class="emoji">🏗</span><strong>Usos:</strong> Concreto, estructuras viejas, bases urbanas</div>
+                <div class="tip"><span class="emoji">🎨</span><strong>Consejo:</strong> Muy útil en ambientes industriales, ideal para aerógrafo</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample celeste"></div>
+                    <h2>🔸 Azul + Blanco = Celeste</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🔵 Azul = <span class="percentage">100%</span></div>
+                    <div class="formula-line">⚪ Blanco = <span class="percentage">100%</span></div>
+                    <div class="result">➡ Celeste brillante y limpio</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Azul (70/30):</strong> celeste saturado<br>Perfecto para cielo claro, reflejos de agua</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Blanco (30/70):</strong> azul hielo<br>Ideal para nieve, hielo, efectos mágicos</div>
+                </div>
+                <div class="uses"><span class="emoji">☁️</span><strong>Usos:</strong> Cielo, agua, magia, cristales</div>
+                <div class="tip"><span class="emoji">✅</span><strong>Consejo:</strong> Fundamental en luces frías. Añadir gris da tonos de niebla</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample azul-noche"></div>
+                    <h2>🔸 Azul + Negro = Azul noche</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🔵 Azul = <span class="percentage">100%</span></div>
+                    <div class="formula-line">⚫ Negro = <span class="percentage">100%</span></div>
+                    <div class="result">➡ Azul muy oscuro, profundo</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Azul (70/30):</strong> azul noche con algo de saturación<br>Usos: cielos estrellados, capas oscuras</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Negro (30/70):</strong> casi negro azulado<br>Perfecto para túneles, profundidad extrema</div>
+                </div>
+                <div class="uses"><span class="emoji">🌌</span><strong>Usos:</strong> Noche, fantasía oscura, estructuras antiguas</div>
+                <div class="tip"><span class="emoji">⚠</span><strong>Consejo:</strong> Controlar el negro: puede matar el color si te pasas</div>
+            </div>
+            
+            <div class="color-card">
+                <div class="color-header">
+                    <div class="color-sample azul-grisaceo"></div>
+                    <h2>🔸 Azul + Gris = Azul grisáceo</h2>
+                </div>
+                <div class="formula">
+                    <div class="formula-line">🔵 Azul = <span class="percentage">100%</span></div>
+                    <div class="formula-line">⚪ Gris = Blanco + Negro</div>
+                    <div class="result">➡ Azul apagado, sobrio</div>
+                </div>
+                <div class="variations">
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Azul (70/30):</strong> azul sucio<br>Ideal para muros, ropas gastadas</div>
+                    <div class="variation"><span class="emoji">🔸</span><strong>Más Gris (30/70):</strong> gris con matiz azul<br>Perfecto para aceros, techos, maquinaria</div>
+                </div>
+                <div class="uses"><span class="emoji">🏭</span><strong>Usos:</strong> Industria, ciudad, metal, tela desgastada</div>
+                <div class="tip"><span class="emoji">🎨</span><strong>Consejo:</strong> Mezcla base muy versátil. Buen uso como sombra azulada</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
